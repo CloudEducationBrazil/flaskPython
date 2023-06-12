@@ -12,6 +12,15 @@ app = Flask(__name__)
 # ex.: / == https://casasbahia.com
 # Rodando local = http://127.0.0.1:5000/
 # Rodando local = localhost:5000/
+# Criar arquivo Procfile com o conteúdo: # web: gunicorn projectTeste:app
+# 
+#  # depois de instalado gunicorn
+
+# 1. Criar o projeto no VsCode
+# 2. Integrar com o Github
+# 3. Criar/Login Netlify
+# 4. Criar site e importar projeto do Github
+# 5. Selecionar o projeto e vai realizar o deploy
 
 @app.route("/")
 def homepage():
