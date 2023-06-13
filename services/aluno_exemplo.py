@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import requests as request
+#import redirect as redirect
 
 app = Flask(__name__)
 @app.route("/create", methods=("GET", "POST"))
