@@ -1,5 +1,4 @@
 from pymongo.mongo_client import MongoClient
-
 from pymongo.server_api import ServerApi
 
 #uri = "mongodb+srv://flavioadm:A1b2C3@provaheleno.fthmkx4.mongodb.net/test"
@@ -7,16 +6,12 @@ from pymongo.server_api import ServerApi
 uri = "mongodb+srv://arseniomendes20:Ams0210021@googleclouduniruy.fbxtwzh.mongodb.net/test" # Arsenio ok
 
 server_api = ServerApi('1')
-
 try:
-
     client = MongoClient(uri, server_api=server_api)
-
     client.admin.command('ping')
 
     print("Sucesso na conexão com o banco de dados")
 
-    client.close()
+    #client.close()
 except Exception as e:
-
     print("Falha na conexão com o MongoDB:", e)

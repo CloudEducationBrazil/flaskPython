@@ -4,7 +4,7 @@ import requests as request
 
 app = Flask(__name__)
 @app.route("/create", methods=("GET", "POST"))
-@login_required
+#@login_required
 def create():
    """Create a new post for the current user."""
    if request.method == "POST":
