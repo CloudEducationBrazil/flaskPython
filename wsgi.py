@@ -4,6 +4,6 @@
 
 import sys
 
-sys.path.insert(0, "/flaskpython")
+sys.path.insert(0, "/flaskpython/templates")
 
 from main import app as application
