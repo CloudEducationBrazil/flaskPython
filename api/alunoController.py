@@ -26,10 +26,14 @@ rotas = Flask(__name__)
 # 3. Criar/Login Netlify
 # 4. Criar site e importar projeto do Github
 # 5. Selecionar o projeto e vai realizar o deploy
-
+import main
 import requests as request
 import entities.AlunoClass as aluno
 import db.conn as conn
+
+@rotas.route("/login")
+def login():
+    return render_template("login.html")
 
 @rotas.route("/")
 def homepage():
@@ -49,6 +53,7 @@ def usuarios(nom_user, email_user):
 @rotas.route("/aluno/create", methods=("GET", "POST"))
 def serviceCreate():
    """Create a new post for the current user."""
+   dados = {"matricula":mat, "nome":nom}
    if request.method == "POST":
        mat = request.form["mat"]
        nom = request.form["nom"]
@@ -73,9 +78,11 @@ def serviceCreate():
            )
            db.commit()
            #return redirect(url_for("templates.index"))
-           return render_template("templates/index.html")
+           return render_template("templates/index.html", mat=mat, nom=nom)
 
    return render_template("templates/index.html")
 
 if __name__ == "__main__":
   rotas.run(debug=True)
+
+main.app
